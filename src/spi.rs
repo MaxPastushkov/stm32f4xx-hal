@@ -191,7 +191,7 @@ impl<SPI: Instance, const BIDI: bool, W> DerefMut for Spi<SPI, BIDI, W> {
 /// Spi in Slave mode
 #[derive(Debug)]
 pub struct SpiSlave<SPI: Instance, const BIDI: bool = false, W = u8> {
-    inner: Inner<SPI>,
+    pub inner: Inner<SPI>,
     pins: (SPI::Sck, SPI::Miso, SPI::Mosi, Option<SPI::Nss>),
     _operation: PhantomData<W>,
 }
